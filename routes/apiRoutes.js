@@ -24,4 +24,22 @@ module.exports = (app) => {
         res.status(400).json(err);
       });
   });
+
+  // PUT route to update a workout
+  app.put("/api/workouts/:id", (req, res) => {
+    db.Workout.findOneAndUpdate(
+      { _id: req.params.id },
+      {
+        $inc: { totalDuration: req.body.duration },
+        $push: { exercises: req.body },
+      },
+      { new: true }
+    )
+      .then((dbWorkout) => {
+        res.json(dbWorkout);
+      })
+      .catch((err) => {
+        res.json(err);
+      });
+  });
 };
