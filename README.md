@@ -42,6 +42,8 @@ GitHub Repository: https://github.com/MeganCarnaghi/Workout-Tracker.git
 
 Deployed Application:
 
+## Screenshots
+
 ## License
 
 ![MIT License](https://img.shields.io/badge/License-MIT-green)
