@@ -5,10 +5,10 @@ const mongoose = require("mongoose");
 
 // Set the port of our application
 // process.env.PORT lets the port be set by Heroku
-var PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;
 
 // Create express app instance.
-var app = express();
+const app = express();
 
 // Serve static content for the app from the public folder
 app.use(express.static("public"));
@@ -20,9 +20,9 @@ app.use(express.json());
 // Connect to database
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", {
   useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useCreateIndex: true,
   useFindAndModify: false,
+  //   useUnifiedTopology: true,
+  //   useCreateIndex: true,
 });
 
 // HTTP request logger middleware
