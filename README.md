@@ -44,6 +44,8 @@ Deployed Application:
 
 ## Screenshots
 
+![Workout Tracker](screenshots/workout-tracker.jpg)
+
 ## License
 
 ![MIT License](https://img.shields.io/badge/License-MIT-green)
