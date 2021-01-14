@@ -39,7 +39,18 @@ module.exports = (app) => {
         res.json(dbWorkout);
       })
       .catch((err) => {
-        res.json(err);
+        res.status(400).json(err);
+      });
+  });
+
+  // GET route to get range of workouts
+  app.get("/api/workouts/range", (req, res) => {
+    db.Workout.find({})
+      .then((dbWorkout) => {
+        res.json(dbWorkout);
+      })
+      .catch((err) => {
+        res.status(400).json(err);
       });
   });
 };
