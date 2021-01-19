@@ -30,7 +30,7 @@ const uri =
   "mongodb+srv://carnagh5:Spartan6@cluster0.krsxo.mongodb.net/workout?retryWrites=true&w=majority";
 const client = new MongoClient(uri, { useNewUrlParser: true });
 client.connect((err) => {
-  const collection = client.db("test").collection("devices");
+  const collection = client.db("workout").collection("workouts");
   // perform actions on the collection object
   client.close();
 });
