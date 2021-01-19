@@ -44,9 +44,9 @@ Deployed Application:
 
 ## Screenshots
 
-![Screenshot 2](screenshots/screenshot-2.jpg)
+![Screenshot1](screenshots/screenshot1.jpg)
 
-![Screenshot 1](screenshots/scrrenshot-1.jpg)
+![Screenshot2](screenshots/screenshot2.jpg)
 
 ## License
 
