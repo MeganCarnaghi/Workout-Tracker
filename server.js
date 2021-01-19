@@ -1,7 +1,7 @@
 // Required Dependencies
 const express = require("express");
-const logger = require("morgan");
 const mongoose = require("mongoose");
+const logger = require("morgan");
 
 // Set the port of our application
 // process.env.PORT lets the port be set by Heroku
@@ -17,23 +17,22 @@ app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// Connect to database
+// Connect to the database
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", {
   useNewUrlParser: true,
+  useFindAndModify: false,
   useUnifiedTopology: true,
   useCreateIndex: true,
-  useFindAndModify: false,
 });
 
 // HTTP request logger middleware
 app.use(logger("dev"));
 
 // Give server access to routes
-require("./routes/apiRoutes")(app);
-require("./routes/htmlRoutes")(app);
+app.use(require("./routes/apiRoutes.js"));
+app.use(require("./routes/htmlRoutes.js"));
 
 // Start our server so it can listen for requests from the client
 app.listen(PORT, () => {
-  // Let us know (server-side) when the server has started
   console.log(`App running on port ${PORT}!`);
 });

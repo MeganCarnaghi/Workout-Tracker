@@ -1,20 +1,19 @@
 // Required Dependencies
+const router = require("express").Router();
 const path = require("path");
 
-// Create HTML Routes
-module.exports = (app) => {
-  // index.html route
-  app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "../public/index.html"));
-  });
+// // Create HTML Routes
+// index.html route
+router.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "../public/index.html"));
+});
+// exercise.html route
+router.get("/exercise", (req, res) => {
+  res.sendFile(path.join(__dirname, "../public/exercise.html"));
+});
+// stats.html route
+router.get("/stats", (req, res) => {
+  res.sendFile(path.join(__dirname, "../public/stats.html"));
+});
 
-  // exercise.html route
-  app.get("/exercise", (req, res) => {
-    res.sendFile(path.join(__dirname, "../public/exercise.html"));
-  });
-
-  // stats.html route
-  app.get("/stats", (req, res) => {
-    res.sendFile(path.join(__dirname, "../public/stats.html"));
-  });
-};
+module.exports = router;
