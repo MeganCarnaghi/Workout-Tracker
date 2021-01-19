@@ -44,7 +44,6 @@ Deployed Application:
 
 ## Screenshots
 
-![Workout Tracker](screenshots/workout-tracker.jpg)
 
 ## License
 
