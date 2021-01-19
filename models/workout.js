@@ -50,6 +50,13 @@ const WorkoutSchema = new Schema(
   { toJSON: { virtuals: true } }
 );
 
+// Tracking the total duration of each workout
+workoutSchema.virtual("totalDuration").get(function () {
+  return this.exercises.reduce((total, exercise) => {
+    return total + exercise.duration;
+  }, 0);
+});
+
 const Workout = mongoose.model("Workout", WorkoutSchema);
 
 module.exports = Workout;
