@@ -40,7 +40,7 @@ A consumer will reach their fitness goals more quickly when they track their wor
 
 GitHub Repository: https://github.com/MeganCarnaghi/Workout-Tracker.git
 
-Deployed Application: https://stormy-sea-35161.herokuapp.com/stats
+Deployed Application: https://stormy-sea-35161.herokuapp.com/
 
 ## Screenshots
 
