@@ -11,6 +11,9 @@ const PORT = process.env.PORT || 3000;
 // Create express app instance.
 const app = express();
 
+// HTTP request logger middleware
+app.use(logger("dev"));
+
 // Serve static content for the app from the public folder
 app.use(express.static("public"));
 
@@ -19,20 +22,12 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 //Connect to the database
-// mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", {
-//   useNewUrlParser: true,
-//   useUnifiedTopology: true,
-//   useCreateIndex: true,
-//   useFindAndModify: false,
-// });
-
-mongoose.connect(process.env.MONGODB_URI, {
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", {
   useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useCreateIndex: true,
   useFindAndModify: false,
 });
-
-// HTTP request logger middleware
-app.use(logger("dev"));
 
 // Give server access to routes
 app.use(require("./routes/apiRoutes.js"));
